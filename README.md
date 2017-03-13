@@ -51,6 +51,14 @@ user = {
 
 window.store.dispatch(logIn(user))
 
-// sign out
+// log out
 window.store.dispatch(logOut())
+
+// sign up
+user = {
+  "username": "user9",
+  "password": "password"
+};
+
+window.store.dispatch(signUp(user))
 ```
