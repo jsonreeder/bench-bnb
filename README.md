@@ -1,15 +1,17 @@
-#+TITLE: Bench BnB
+# Bench BnB
 
 A full stack web app built to practice Rails, React-Redux, and authentication.
 
-* Development notes
-** Routes
-#+BEGIN_EXAMPLE
+# Development notes
+
+## Routes
+```
      Prefix Verb   URI Pattern            Controller#Action
        root GET    /                      static_pages#root
   api_users POST   /api/users(.:format)   api/users#create {:format=>:json}
 api_session DELETE /api/session(.:format) api/sessions#destroy {:format=>:json}
             POST   /api/session(.:format) api/sessions#create {:format=>:json}
-#+END_EXAMPLE
-* Left off on 
-### `Greeting` Components
+```
+
+## Left off on
+`Greeting` Components
