@@ -15,7 +15,7 @@ const SessionReducer = (state = nullUser, action) => {
 
   case RECEIVE_CURRENT_USER:
     return {
-      currentUser: action.user,
+      currentUser: action.currentUser,
       errors: []
     };
 

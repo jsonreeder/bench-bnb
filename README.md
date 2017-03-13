@@ -15,3 +15,27 @@ api_session DELETE /api/session(.:format) api/sessions#destroy {:format=>:json}
 
 ## Left off on
 `Greeting` Components
+
+## Ajax sign ins
+
+``` javascript
+user = {
+  "username": "user",
+  "password": "password"
+};
+
+// Sign Up
+
+// Sign in
+$.ajax({
+  method: 'POST',
+  url: 'api/session',
+  data: {user}
+})
+
+// Sign out
+$.ajax({
+  method: 'DELETE',
+  url: 'api/session'
+})
+```
