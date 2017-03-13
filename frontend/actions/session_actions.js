@@ -17,7 +17,9 @@ export const logIn = user => dispatch => {
 
 // TODO: Consider adding success callback to promise
 export const logOut = () => dispatch => {
-  return logOut();
+  return APIUtil.logOut().then(
+    user => dispatch(receiveCurrentUser(null))
+  );
 };
 
 export const signUp = user => dispatch => {

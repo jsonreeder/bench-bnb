@@ -13,8 +13,9 @@ api_session DELETE /api/session(.:format) api/sessions#destroy {:format=>:json}
             POST   /api/session(.:format) api/sessions#create {:format=>:json}
 ```
 
-## Left off on
-`Greeting` Components
+## Next step
+- Add signUp to window
+- Add functionality to form buttons
 
 ## Ajax sign ins
 
@@ -38,4 +39,18 @@ $.ajax({
   method: 'DELETE',
   url: 'api/session'
 })
+```
+
+## Window sign ins
+This is not yet working with the form
+``` javascript
+user = {
+  "username": "user",
+  "password": "password"
+};
+
+window.store.dispatch(logIn(user))
+
+// sign out
+window.store.dispatch(logOut())
 ```
