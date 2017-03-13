@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor (props) {
@@ -7,6 +8,19 @@ class SessionForm extends React.Component {
       username: '',
       password: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = this.state;
+    this.props.processForm({user});
   }
 
   // TODO: Add methods
@@ -14,17 +28,20 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit} >
           <h2>Welcome to BenchBnb</h2>
           <label>
             Username:
             <input type='text'
-            />
+              onChange={this.update('username')}
+             />
           </label>
           <br />
           <label>
             Password:
-            <input type='password' />
+            <input type='password'
+              onChange={this.update('password')}
+            />
           </label>
           <br />
           <input type='submit' value='submit' />
@@ -34,4 +51,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
